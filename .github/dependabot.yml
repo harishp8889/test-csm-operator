@@ -7,7 +7,8 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "/operatorconfig/driverconfig/*"
+    directories:
+      - "/operatorconfig/driverconfig/*"
     schedule:
       interval: "daily"
     target-branch: "main"
