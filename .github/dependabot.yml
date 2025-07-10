@@ -8,7 +8,7 @@ version: 2
 updates:
   - package-ecosystem: "docker"
     directories:
-      - "/operatorconfig/**"
+      - "/operatorconfig/**/**"
     schedule:
       interval: "daily"
     target-branch: "main"
