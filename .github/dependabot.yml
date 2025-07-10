@@ -8,7 +8,7 @@ version: 2
 updates:
   - package-ecosystem: "docker"
     directories:
-      - "/operatorconfig/driverconfig/*"
+      - "/operatorconfig/driverconfig/powerflex/**"
     schedule:
       interval: "daily"
     target-branch: "main"
