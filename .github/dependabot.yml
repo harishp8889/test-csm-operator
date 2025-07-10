@@ -29,7 +29,7 @@ updates:
           - minor
         patterns:
           - "*"
-  - package-ecosystem: docker
+  - package-ecosystem: "docker"
     target-branch: "main"
     directory: "/operatorconfig/driverconfig/common"
     schedule:
