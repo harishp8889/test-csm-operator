@@ -11,3 +11,9 @@ updates:
     schedule:
       interval: "daily"
     target-branch: "main"
+groups:
+  all-updates:
+  patterns:
+  - "registry.k8s.io/sig-storage/*"
+  - "quay.io/dell/*"
+  
