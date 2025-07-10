@@ -13,9 +13,9 @@ updates:
       interval: "daily"
     target-branch: "main"
     groups:
-    updates:
-      patterns:
-        - "*"
+      updates:
+        patterns:
+          - "*"
 
 
           
