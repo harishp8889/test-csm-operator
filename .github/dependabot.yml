@@ -41,3 +41,16 @@ updates:
       github-actions:
         patterns:
           - "*"
+
+  # csi-powerstore packages
+  - package-ecosystem: docker
+    target-branch: "main"
+    directories:
+      - /operatorconfig/driverconfig/common
+    labels:
+      - dependencies
+    schedule:
+      # check daily
+      interval: daily
+      # at 6pm UTC
+      time: "18:00"
