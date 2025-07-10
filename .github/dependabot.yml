@@ -7,9 +7,6 @@
 version: 2
 updates:
   - package-ecosystem: "docker"
-    directory: "./operatorconfig/driverconfig/common"
+    directory: "/operatorconfig/driverconfig/common/"
     schedule:
       interval: "daily"
-    allow:
-      - dependency-name: "registry.k8s.io/sig-storage/*"
-      - dependency-name: "quay.io/dell/*"
