@@ -31,8 +31,7 @@ updates:
           - "*"
   - package-ecosystem: docker
     target-branch: "main"
-    directory:
-      - "/operatorconfig/driverconfig/common"
+    directory: "/operatorconfig/driverconfig/common"
     schedule:
       # check daily
       interval: daily
