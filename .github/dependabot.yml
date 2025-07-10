@@ -29,6 +29,15 @@ updates:
           - minor
         patterns:
           - "*"
+  - package-ecosystem: docker
+    target-branch: "main"
+    directory:
+      - "/operatorconfig/driverconfig/common"
+    schedule:
+      # check daily
+      interval: daily
+      # at 6pm UTC
+      time: "18:00"
 
   # github actions
   - package-ecosystem: "github-actions"
@@ -42,13 +51,3 @@ updates:
         patterns:
           - "*"
 
-  # csi-powerstore packages
-  - package-ecosystem: docker
-    target-branch: "main"
-    directories:
-      - "/operatorconfig/driverconfig/common"
-    schedule:
-      # check daily
-      interval: daily
-      # at 6pm UTC
-      time: "18:00"
