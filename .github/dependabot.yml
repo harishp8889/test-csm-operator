@@ -6,50 +6,10 @@
 
 version: 2
 updates:
-  # Schedule for go module updates
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "sunday"
-      time: "18:00"
-    allow:
-      # Allow direct updates for packages
-      - dependency-type: direct
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - version-update:semver-patch
-    # a group of dependencies will be updated together in one pull request
-    groups:
-      golang:
-        # group all semantic versioning levels together in one pull request
-        update-types:
-          - major
-          - minor
-        patterns:
-          - "*"
   - package-ecosystem: "docker"
-    target-branch: "main"
     directory: "/operatorconfig/driverconfig/common"
     schedule:
-      # check daily
-      interval: daily
-      # at 6pm UTC
-      time: "18:00"
-    groups:
-      docker:
-        patterns:
-          - "*"
-  # github actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      # Check for updates to GitHub Actions every week
-      interval: "weekly"
-      day: "saturday"
-    groups:
-      github-actions:
-        patterns:
-          - "*"
-
+      interval: "daily"
+    allow:
+      - dependency-name: "registry.k8s.io/sig-storage/*"
+      - dependency-name: "quay.io/dell/*"
