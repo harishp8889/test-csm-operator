@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.4
 
 require (
-	github.com/cert-manager/cert-manager v1.18.0
+	github.com/cert-manager/cert-manager v1.18.2
 	github.com/go-logr/logr v1.4.2
 	github.com/stretchr/testify v1.10.0
 	github.com/vmware-tanzu/velero v1.16.0
