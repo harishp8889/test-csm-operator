@@ -91,7 +91,7 @@ spec:
             allowPrivilegeEscalation: true
             capabilities:
               add: ["SYS_ADMIN"]
-          image: quay.io/dell/container-storage-modules/csi-vxflexos:v2.13.0
+          image: quay.io/dell/container-storage-modules/csi-vxflexos:v2.14.0
           imagePullPolicy: IfNotPresent
           command: ["/csi-vxflexos.sh"]
           args:
@@ -153,7 +153,7 @@ spec:
               mountPath: /certs
               readOnly: true
         - name: registrar
-          image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.13.0
+          image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.14.0
           imagePullPolicy: IfNotPresent
           args:
             - "--v=5"
@@ -175,7 +175,7 @@ spec:
         - name: sdc-monitor
           securityContext:
             privileged: true
-          image: quay.io/dell/storage/powerflex/sdc:4.5.2.1
+          image: quay.io/dell/storage/powerflex/sdc:4.5.4
           imagePullPolicy: IfNotPresent
           env:
             - name: HOST_PID
@@ -201,7 +201,7 @@ spec:
               mountPath: /host_opt_emc_path
       initContainers:
         - name: mdm-container
-          image: quay.io/dell/container-storage-modules/csi-vxflexos:v2.13.0
+          image: quay.io/dell/container-storage-modules/csi-vxflexos:v2.14.0
           imagePullPolicy: IfNotPresent
           command: ["/csi-vxflexos.sh"]
           args:
@@ -227,7 +227,7 @@ spec:
         - name: sdc
           securityContext:
             privileged: true
-          image: quay.io/dell/storage/powerflex/sdc:4.5.2.1
+          image: quay.io/dell/storage/powerflex/sdc:4.5.4
           imagePullPolicy: IfNotPresent
           command:
             - "/bin/sh"
