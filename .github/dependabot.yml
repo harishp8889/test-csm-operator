@@ -44,8 +44,8 @@ updates:
   # To update all the images in the operatorconfig and tests/e2e/testfiles directory
   - package-ecosystem: "docker"
     directories:
-      - "/operatorconfig/driverconfig/powerflex/$(basename $(ls -drt /operatorconfig/driverconfig/powerflex/*/ | tail -1))/**"
-      - "/tests/e2e/testfiles/$(basename $(ls -drt /tests/e2e/testfiles/*/ | tail -1))/**/**"
+      - "/operatorconfig/driverconfig/powerflex/$(basename $(ls -drt /operatorconfig/driverconfig/powerflex/**/ | tail -1))/**"
+      - "/tests/e2e/testfiles/$(basename $(ls -drt /tests/e2e/testfiles/**/ | tail -1))/**/**"
     schedule:
       interval: "daily"
     target-branch: "main"
