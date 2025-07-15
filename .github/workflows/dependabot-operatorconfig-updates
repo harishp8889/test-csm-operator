@@ -1,0 +1,32 @@
+name:
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  update-dependabot-config:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Find latest version folder
+      id: find-latest-folder
+      run: echo "LATEST_FOLDER=$(ls -dt /operatorconfig/driverconfig/powerflex/*/ | head -1)" >> $GITHUB_ENV
+
+    - name: Update dependabot.yml
+      run: |
+        LATEST_FOLDER=${{ env.LATEST_FOLDER }}
+        sed -i "s|directory: .*|directory: \"$LATEST_FOLDER\"|" .github/dependabot.yml
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .github/dependabot.yml
+        git commit -m "Update dependabot.yml with latest version folder"
+        git push
+name: Update Dependabot Config

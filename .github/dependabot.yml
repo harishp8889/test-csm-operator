@@ -45,11 +45,11 @@ updates:
   - package-ecosystem: "docker"
     directories:
       # Update the version to latest post release to stay up to date
-      - "/operatorconfig/driverconfig/powerflex/v2.15.0/**"
-      - "/operatorconfig/driverconfig/powermax/v2.15.0/**"
-      - "/operatorconfig/driverconfig/powerscale/v2.15.0/**"
-      - "/operatorconfig/driverconfig/powerstore/v2.15.0/**"
-      - "/operatorconfig/driverconfig/unity/v2.15.0/**"
+      - "/operatorconfig/driverconfig/powerflex/v2.14.0/**"
+      - "/operatorconfig/driverconfig/powermax/v2.14.0/**"
+      - "/operatorconfig/driverconfig/powerscale/v2.14.0/**"
+      - "/operatorconfig/driverconfig/powerstore/v2.14.0/**"
+      - "/operatorconfig/driverconfig/unity/v2.14.0/**"
       - "/tests/e2e/testfiles/**"
     schedule:
       interval: "daily"
