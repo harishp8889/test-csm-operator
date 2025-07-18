@@ -44,7 +44,7 @@ updates:
   # To update all the images in the operatorconfig and tests/e2e/testfiles directory
   - package-ecosystem: "docker"
     directories:
-      # Update the version to latest post release to stay up to date
+      # Update the version to latest post release to stay up to date.
       - "/operatorconfig/driverconfig/powerflex/v2.15.0/**"
       - "/operatorconfig/driverconfig/powermax/v2.15.0/**"
       - "/operatorconfig/driverconfig/powerscale/v2.15.0/**"
