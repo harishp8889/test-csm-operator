@@ -50,11 +50,8 @@ updates:
       - "/operatorconfig/driverconfig/powerscale/v2.15.0/**"
       - "/operatorconfig/driverconfig/powerstore/v2.15.0/**"
       - "/operatorconfig/driverconfig/unity/v2.15.0/**"
-      - "/samples/storage_csm_unity_v2150.yaml"
-      - "/samples/storage_csm_powerscale_v2150.yaml"
-      - "/samples/storage_csm_powerstore_v2150.yaml"
-      - "/samples/storage_csm_powerflex_v2150.yaml"
-      - "/samples/storage_csm_powermax_v2150.yaml"
+      - "/samples/v2.15.0"
+      - "samples/ocp/1.9.0"
       - "/tests/e2e/testfiles/**"
     schedule:
       interval: "daily"
