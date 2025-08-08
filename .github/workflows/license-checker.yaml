@@ -3,16 +3,33 @@ name: Weekly License Header Check
 on:
   schedule:
     - cron: '0 0 * * 1'  # Runs every Monday at 00:00 UTC
+  workflow_dispatch:
 
 jobs:
   license-check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Run License Header Checker
-        uses: dell/common-github-actions/license-checker@main
+        uses: dell/common-github-actions/license-checker@feature/job-schedule
         with:
-          autofix: false
+          autofix: true
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create and switch to new branch
+        run: |
+          git checkout -b autofix/license-header || git checkout autofix/license-header
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "Autofix license header violations" || echo "No changes to commit"
+          git push origin autofix/license-header
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
