@@ -38,6 +38,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: auto-update-branch
+          branch: autofix/license-header
           title: "Automated PR for file changes"
           body: "This PR was created automatically by a GitHub Action."
