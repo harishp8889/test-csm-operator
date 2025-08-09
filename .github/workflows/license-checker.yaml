@@ -39,5 +39,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: autofix/license-header
+          base: main
           title: "Automated PR for file changes"
           body: "This PR was created automatically by a GitHub Action."
