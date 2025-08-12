@@ -35,4 +35,4 @@ jobs:
           title: "Automated PR for file changes"
           body: "This PR was created automatically by a GitHub Action."
           sign-commits: true
-          delete-branch: false
+          delete-branch: true
