@@ -26,14 +26,6 @@ jobs:
         with:
           autofix: true
 
-      # - name: Commit and Push Changes
-      #   run: |
-      #     git checkout -b autofix/license-header
-      #     git add .
-      #     git commit -m "Autofix license header violations"
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
