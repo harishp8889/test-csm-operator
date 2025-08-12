@@ -12,10 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      # - name: Configure Git
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
       
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
@@ -36,7 +36,6 @@ jobs:
           git checkout -b autofix/license-header
           git add .
           git commit -m "Autofix license header violations"
-          git push origin autofix/license-header
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -44,8 +43,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: autofix/license-header
-          base: main
+          branch: autofix/license-header          
           commit-message: "License header autofix"
           title: "Automated PR for file changes"
           body: "This PR was created automatically by a GitHub Action."
