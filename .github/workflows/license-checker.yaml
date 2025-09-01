@@ -22,7 +22,7 @@ jobs:
           git_config_global: true
 
       - name: Run License Header Checker
-        uses: dell/common-github-actions/license-checker@main
+        uses: dell/common-github-actions/license-checker@usr/harishp/auto-fix
         with:
           autofix: true
 
